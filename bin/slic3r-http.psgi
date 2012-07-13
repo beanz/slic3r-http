@@ -8,7 +8,9 @@ use Plack::Request;
 # Then point your browser at http://<your-ip>:5000/ or use:
 # curl -o yoda.gcode -F stlfile=@/path/to/yoda.stl http://<your-ip>:5000/gcode
 # SLIC3R_CONFIG_DIR should point to a directory containing .ini files with
-# slic3r settings (defaults to current directory).
+# slic3r settings (defaults to current directory).  Configuration files will
+# be added to the browser form or may be selected with curl options like:
+#   -F config=<ini-file-basename>
 
 use constant {
   CONFIG_DIR => $ENV{SLIC3R_CONFIG_DIR} || '.',
